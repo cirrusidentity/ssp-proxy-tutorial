@@ -1,3 +1,20 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Tutorial Prerequisites](#tutorial-prerequisites)
+- [Assumptions](#assumptions)
+- [Install Software](#install-software)
+  - [Docker](#docker)
+  - [Pull docker images](#pull-docker-images)
+  - [PhpStorm (Optional)](#phpstorm-optional)
+  - [Git](#git)
+  - [This tutorial](#this-tutorial)
+- [Configure Things](#configure-things)
+  - [Run `nginx-proxy`](#run-nginx-proxy)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Tutorial Prerequisites
 
 The tutorial makes use of `docker` to reduce the amount of
@@ -39,17 +56,19 @@ It can be nice to have an IDE for edit `.php` files used in the tutorial.
 
 ## Git
 
-We'll be using [git](https://git-scm.com/downloads) to down the tutorial
+We'll be using [git](https://git-scm.com/downloads) to download the tutorial.
 
 ## This tutorial
 
 The tutorial contains files that you'll use to complete the tutorial.
 
-**note** You should clone things some where under your home
+**note** You should clone things somewhere under your home
   directory. We'll be mounting files from the tutorial into Docker
   containers and by default only certain paths (including your home
   dir) are allowed to be mounted.
 
+    mkdir -p ~/somepath/techex
+    cd ~/somepath/techex
     git clone https://github.com/cirrusidentity/ssp-proxy-tutorial.git
 
 
