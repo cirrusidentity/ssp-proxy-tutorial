@@ -25,6 +25,41 @@ See more details and options for the proxy here: https://hub.docker.com/r/jwilde
 ## SSL
 You should use `https` for your services but this makes it harder to proxy.  Currently we use the nginx proxy with a self-signed cert, and you'll need to accept the browser warnings.
 
+
+### Let's Encrypt
+
+There are also several certificate that were generated with Let's Encrypt.
+To renew these certificates we'll use the DNS challenge since the hostnames route to private IPs.
+The hostnames to create certs for are in `certs/letsencrypt/domains.txt`
+
+```bash
+# Run dehydrate with a lexicon script to automatically generate certs.
+# The way to indicate to Lexicon that we are using a delegated zone is hackish - we stick it infront of the provider name
+# Also we use our own starting script - because the docker image doesn't include boto3 so we install it.
+AWSKEY='abc'
+AWSTOKEN='xyz
+docker run -it --rm \
+  --name dehydrated \
+  -e 'EMAIL=patrick@cirrusidentity.com' \
+  -e 'PROVIDER=--delegated stack-dev.cirrusidentity.com route53' \
+  -e LEXICON_ROUTE53_USERNAME=$AWSKEY' \
+  -e LEXICON_ROUTE53_TOKEN=$AWSTOKEN \
+  -v $PWD/certs/letsencrypt:/letsencrypt/ \
+  mlaihk/docker-dehydrated-lexicon \
+  /letsencrypt/run.sh
+```
+
+After the above runs you'll have a bunch of `certs` and `keys`. We need to move them and name them what the `nginx-proxy` expects.
+
+```bash
+while read domain; do
+  echo "Moving cert for $domain";
+  cp certs/letsencrypt/certs/$domain/privkey.pem certs/$domain.key
+  cp certs/letsencrypt/certs/$domain/cert.pem certs/$domain.crt
+done < certs/letsencrypt/domains.txt
+```
+
+
 ## Run Proxy
 
 Use the below syntax to run the proxy with tls support

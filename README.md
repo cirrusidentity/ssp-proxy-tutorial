@@ -20,3 +20,4 @@ We've broken the tutorial into several stages
 3. Setup an IdP
 4. Setup a Proxy
 5. Using Modules
+6. Metadata Processing
