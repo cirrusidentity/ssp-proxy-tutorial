@@ -5,6 +5,10 @@
 - [Setting up an SP](#setting-up-an-sp)
 - [Run a container](#run-a-container)
 - [Configure It](#configure-it)
+  - [Changing config.php](#changing-configphp)
+  - [Log In](#log-in)
+  - [Metadata](#metadata)
+  - [Log In (for real)](#log-in-for-real)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
