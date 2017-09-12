@@ -52,6 +52,8 @@ $config = array(
      * When errorreporting is enabled, a form will be presented for the user to report
      * the error to technicalcontact_email.
      */
+
+    // TUTORIAL: TODO: disable show errrors. Good security practice is to not output stack traces
     'showerrors' => true,
     'errorreporting' => true,
 
@@ -75,7 +77,9 @@ $config = array(
      * metadata listing and diagnostics pages.
      * You can also put a hash here; run "bin/pwgen.php" to generate one.
      */
+    // TUTORIAL: TODO: enter a different password or a hash
     'auth.adminpassword' => '123',
+    // TUTORIAL: TODO: Protect the index page
     'admin.protectindexpage' => false,
     'admin.protectmetadata' => false,
 
@@ -87,6 +91,7 @@ $config = array(
      * A possible way to generate a random salt is by running the following command from a unix shell:
      * tr -c -d '0123456789abcdefghijklmnopqrstuvwxyz' </dev/urandom | dd bs=32 count=1 2>/dev/null;echo
      */
+    // TUTORIAL: TODO: change the salt
     'secretsalt' => 'defaultsecretsalt',
 
     /*
@@ -94,6 +99,7 @@ $config = array(
      * The email address will be used as the recipient address for error reports, and
      * also as the technical contact in generated metadata.
      */
+    // TUTORIAL: On your real SP you would change these
     'technicalcontact_name' => 'Administrator',
     'technicalcontact_email' => 'na@example.org',
 
@@ -345,6 +351,7 @@ $config = array(
      * through https. If the user can access the service through
      * both http and https, this must be set to FALSE.
      */
+    // TUTORIAL: TODO: Keep your cookies secure
     'session.cookie.secure' => false,
 
     /*
