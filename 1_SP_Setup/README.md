@@ -118,11 +118,11 @@ To incorporate the metadata in you SP, do:
 1. Create a `php` metadta file for the idps in `sp/metadata/saml20-idp-remote.php`
    1. `echo -e '<?php \n' > sp/metadata/saml20-idp-remote.php` 
 1. For each IdP:
-  1. Download the metadata to your machine.
-  2. Goto SSP's [metadata converter](https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/admin/metadata-converter.php)
-  3. Click `Browse...` and pick the metadata file you downloaded and then click `parse`.
-  4. Below you'll see the `Converted metadata` section. Go to the section labeled `saml20-idp-remote` and copy the data
-  5. Paste the data into `sp/metadata/saml20-idp-remote.php`
+   1. Download the metadata to your machine.
+   2. Goto SSP's [metadata converter](https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/admin/metadata-converter.php)
+   3. Click `Browse...` and pick the metadata file you downloaded and then click `parse`.
+   4. Below you'll see the `Converted metadata` section. Go to the section labeled `saml20-idp-remote` and copy the data
+   5. Paste the data into `sp/metadata/saml20-idp-remote.php`
 1. Visit the SSP [Federation UI](https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/core/frontpage_federation.php) and confirm you see the IdPs listed.
 
 | IdP | Metadata Link |
@@ -135,16 +135,17 @@ To incorporate the metadata in you SP, do:
 
 [Test the authentication source](https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/core/authenticate.php?as=default-sp) and you should be able to pick from the IdPs you've added.
 
-| IdP | Login Notes|
+| IdP | Login Notes |
+| --- | --- |
 | Test Shib | Username and passwords are on the login screen |
 | Okta Dev | You need to provide the data to be asserted as shown below |
 
 
-Okta Settings
+Okta Settings. 
 
--  *Issuer* urn:example:idp
--  *SP ACS URL* "https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp"
--  *SP Audience URI* "https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/saml/sp/metadata.php/default-sp"
+-  **Issuer:** urn:example:idp
+-  **SP ACS URL:** https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp
+-  **SP Audience URI:** https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/saml/sp/metadata.php/default-sp
 
 
 # Summary
