@@ -42,7 +42,7 @@ It can take a while to pull down all the docker images required for
 the tutorial. We recommend you do this *prior* to arriving at the tutorial.
 
 ```bash
-images="nginx jwilder/nginx-proxy";
+images="nginx jwilder/nginx-proxy unicon/simplesamlphp";
 for name in $images;
 do 
   docker pull $name
