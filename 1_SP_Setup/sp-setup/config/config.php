@@ -54,7 +54,7 @@ $config = array(
      */
 
     // TUTORIAL: TODO: disable show errrors. Good security practice is to not output stack traces
-    'showerrors' => true,
+    'showerrors' => false,
     'errorreporting' => true,
 
     /**
@@ -78,9 +78,9 @@ $config = array(
      * You can also put a hash here; run "bin/pwgen.php" to generate one.
      */
     // TUTORIAL: TODO: enter a different password or a hash
-    'auth.adminpassword' => '123',
+    'auth.adminpassword' => 'tutorial123',
     // TUTORIAL: TODO: Protect the index page
-    'admin.protectindexpage' => false,
+    'admin.protectindexpage' => true,
     'admin.protectmetadata' => false,
 
     /**
@@ -92,7 +92,7 @@ $config = array(
      * tr -c -d '0123456789abcdefghijklmnopqrstuvwxyz' </dev/urandom | dd bs=32 count=1 2>/dev/null;echo
      */
     // TUTORIAL: TODO: change the salt
-    'secretsalt' => 'defaultsecretsalt',
+    'secretsalt' => 'secret_nacl',
 
     /*
      * Some information about the technical persons running this installation.
@@ -352,7 +352,7 @@ $config = array(
      * both http and https, this must be set to FALSE.
      */
     // TUTORIAL: TODO: Keep your cookies secure
-    'session.cookie.secure' => false,
+    'session.cookie.secure' => true,
 
     /*
      * Enable secure POST from HTTPS to HTTP.

@@ -47,13 +47,13 @@ $config = array(
          * Please refer to the hosted SP configuration reference for more information.
           */
         //TUTORIAL: TODO: enable this
-        //'signature.algorithm' => 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha256',
+        'signature.algorithm' => 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha256',
 
    
         /* TUTORIAL: Enable private key and the certificate. We generated these as part of the tutorial so we could pre-register the metadata
            with some tests IdPs */
-        //'privatekey' => 'saml.pem',
-        //'certificate' => 'saml.crt',
+        'privatekey' => 'saml.pem',
+        'certificate' => 'saml.crt',
 
 
         /*
