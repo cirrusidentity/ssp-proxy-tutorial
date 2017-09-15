@@ -10,15 +10,10 @@ $config = array(
         'core:AdminPassword',
     ),
 
-    /*
-    'example-userpass' => array(
+    /* Easy way to authenticate users for a demo */
+    'tutorial-idp' => array(
         'exampleauth:UserPass',
-
-        // Give the user an option to save their username for future login attempts
-        // And when enabled, what should the default be, to save the username or not
-        //'remember.username.enabled' => FALSE,
-        //'remember.username.checked' => FALSE,
-
+        // Format is  username:passwor => array( attributes )
         'student:studentpass' => array(
             'uid' => array('test'),
             'eduPersonAffiliation' => array('member', 'student'),
@@ -28,5 +23,4 @@ $config = array(
             'eduPersonAffiliation' => array('member', 'employee'),
         ),
     ),
-    */
 );

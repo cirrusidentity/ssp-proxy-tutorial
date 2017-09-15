@@ -127,8 +127,8 @@ $config = array(
      * Options: [syslog,file,errorlog]
      *
      */
-    'logging.level' => SimpleSAML_Logger::NOTICE,
-    'logging.handler' => 'syslog',
+    'logging.level' => SimpleSAML_Logger::DEBUG,
+    'logging.handler' => 'errorlog',
 
     /*
      * Specify the format of the logs. Its use varies depending on the log handler used (for instance, you cannot
@@ -266,7 +266,7 @@ $config = array(
      * In example when you are setting up a federation bridge.
      */
     //TUTORIAL: TODO: enable saml20-idp
-    'enable.saml20-idp' => false,
+    'enable.saml20-idp' => true,
     'enable.shib13-idp' => false,
     'enable.adfs-idp' => false,
     'enable.wsfed-sp' => false,

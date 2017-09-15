@@ -127,8 +127,8 @@ $config = array(
      * Options: [syslog,file,errorlog]
      *
      */
-    'logging.level' => SimpleSAML_Logger::NOTICE,
-    'logging.handler' => 'syslog',
+    'logging.level' => SimpleSAML_Logger::INFO,
+    'logging.handler' => 'errorlog',
 
     /*
      * Specify the format of the logs. Its use varies depending on the log handler used (for instance, you cannot

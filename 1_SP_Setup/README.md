@@ -38,7 +38,7 @@ docker run -d --name service-provider \
   -v $PWD/1_SP_Setup/$FOLDER/config:/var/simplesamlphp/config \
   -v $PWD/1_SP_Setup/$FOLDER/metadata:/var/simplesamlphp/metadata \
   -v $PWD/1_SP_Setup/cert:/var/simplesamlphp/cert \
-  unicon/simplesamlphp
+  cirrusid/ssp-base:1.14.16
 ```
 
 and you can now access the site

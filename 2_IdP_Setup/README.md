@@ -33,8 +33,8 @@ have already been adjusted. You can reference those if you get stuck.
 We are going to run a container for the service `https://idp.tutorial.stack-dev.cirrusidentity.com`
 and mount some configuration files.
 
-We override the default `CMD` in the docker container so that we can
-enable specific, optional modules prior to starting Apache.
+We also enable the `exampleauth` module by setting an environment
+variable. The docker startup script will then ensure the module is enabled.
 
 ```bash
 FOLDER=idp
@@ -47,9 +47,7 @@ docker run -d --name idp \
   -v $PWD/2_IdP_Setup/$FOLDER/metadata:/var/simplesamlphp/metadata \
   -v $PWD/2_IdP_Setup/cert:/var/simplesamlphp/cert \
   -v $PWD/scripts/ssp-startup.sh:/tmp/ssp-startup.sh \
-  unicon/simplesamlphp \
-  /tmp/ssp-startup.sh
-  
+  cirrusid/ssp-base:1.14.16
 ```
 
 and you can now access the site
@@ -75,7 +73,32 @@ In your favorite editor edit `idp/config/config.php` and change
 
 Once you save, your changes are live. No need to restart anything
 
-## Chaning saml20-idp-hosted.php
+## Enable authsource
+
+Users will need to authenticate to the IdP in some way. For the
+tutorial purposes we'll have them authenticate using some
+usernames/passwords pre-configured in `authsources.php`
+
+Edit that file now and uncomment `tutorial-idp`. This will allow two users (`student` and `employee`) to authenticate with the passwords `sudentpass` and `employeepass`
+
+```php
+    'tutorial-idp' => array(
+        'exampleauth:UserPass',
+        // Format is  username:passwor => array( attributes )
+        'student:studentpass' => array(
+            'uid' => array('test'),
+            'eduPersonAffiliation' => array('member', 'student'),
+        ),
+        'employee:employeepass' => array(
+            'uid' => array('employee'),
+            'eduPersonAffiliation' => array('member', 'employee'),
+        ),
+    ),
+```
+
+You can (test the authentcation source)[https://idp.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/core/authenticate.php] and confirm the 
+
+## Changing saml20-idp-hosted.php
 
 The `saml20-idp-hosted.php` contains the configuration for the IdP
 that you are running. The `saml20-idp-remote.php` file we saw earlier
@@ -84,9 +107,7 @@ in the tutorial is used for IdPs you trust. Similarily the
 
 TODO
 
-## Enable authsource
 
-TODO
 
 # Look Around
 
