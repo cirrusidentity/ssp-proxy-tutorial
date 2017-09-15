@@ -1,4 +1,26 @@
 <?php 
+$metadata['https://idp.tutorial.stack-dev.cirrusidentity.com/simplesaml/saml2/idp/metadata.php'] = array (
+  'metadata-set' => 'saml20-idp-remote',
+  'entityid' => 'https://idp.tutorial.stack-dev.cirrusidentity.com/simplesaml/saml2/idp/metadata.php',
+  'SingleSignOnService' => 
+  array (
+    0 => 
+    array (
+      'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect',
+      'Location' => 'https://idp.tutorial.stack-dev.cirrusidentity.com/simplesaml/saml2/idp/SSOService.php',
+    ),
+  ),
+  'SingleLogoutService' => 
+  array (
+    0 => 
+    array (
+      'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect',
+      'Location' => 'https://idp.tutorial.stack-dev.cirrusidentity.com/simplesaml/saml2/idp/SingleLogoutService.php',
+    ),
+  ),
+  'certData' => 'MIIEVDCCAzygAwIBAgIJAIN96sYKvcRoMA0GCSqGSIb3DQEBBQUAMHkxCzAJBgNVBAYTAkFVMRMwEQYDVQQIEwpTb21lLVN0YXRlMSEwHwYDVQQKExhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQxMjAwBgNVBAMTKWlkcC50dXRvcmlhbC5zdGFjay1kZXYuY2lycnVzaWRlbnRpdHkuY29tMB4XDTE3MDkxNTIzMDEzMVoXDTI3MDkxNTIzMDEzMVoweTELMAkGA1UEBhMCQVUxEzARBgNVBAgTClNvbWUtU3RhdGUxITAfBgNVBAoTGEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZDEyMDAGA1UEAxMpaWRwLnR1dG9yaWFsLnN0YWNrLWRldi5jaXJydXNpZGVudGl0eS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC98cWW+kGypy6cV1qvOQol7A9/spl9jMScq5zPUXcKqEYh8SdcBuyzMNTxqac+/haAL2OQssk9ttMtt8qW194Emqe/dKtjaDFN+iiMs4g2JQMlFY2jETuVkuN7zmOFVtKKS9nbEsBHmq8PlwaxAYqstFgHqbv5AgoKE5wJWP1m7VdhIIVfdj8pIeRZu6NuwfEjPrFamN8fyfqpYrgO198uTh2uQNKALhGQgZjOO3qm97Z442+hzXNzBQ3krlL6bp//d4jZnoMzPHFKK2+w5lpbqGRigitNUeBUAUtX7q1K34nl3ONN5WSSdUSEr+zdM114UtvYx3EjeUaJweeBDZkXAgMBAAGjgd4wgdswHQYDVR0OBBYEFPnJrkWSGIXmVxh1HKn/WIZyucZ3MIGrBgNVHSMEgaMwgaCAFPnJrkWSGIXmVxh1HKn/WIZyucZ3oX2kezB5MQswCQYDVQQGEwJBVTETMBEGA1UECBMKU29tZS1TdGF0ZTEhMB8GA1UEChMYSW50ZXJuZXQgV2lkZ2l0cyBQdHkgTHRkMTIwMAYDVQQDEylpZHAudHV0b3JpYWwuc3RhY2stZGV2LmNpcnJ1c2lkZW50aXR5LmNvbYIJAIN96sYKvcRoMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEFBQADggEBAE8cL31WjjGO49NYd+rQGQgkJRcTtI75A1/Oibcl+hXJPCALinv4/OZCJP7lctzYKTIBAgYZpMCPrDiibpTAshjp3amwAqLDptyW1C5THgdPLGfPNT309qmTFkbvQuzoqNWYcvkJBxkPreNd9BUgKtpG0xiFp5HXZ+HeVZnuqMb4b1LEVUNpSfnjbKdZXQPKhETD5E4CY+5JDOhNxJHhaebHl/Fl8F7MsxDb/2odlzEfMiFSZ0/dfMRnbx5gLFsCxQtmf+P6QgsOP20jp4MLkUENgyh7Y+wknCE+rgqwGL1eUbGrEN0H02d7tm9k9wasO1ng1xeOhtSb/wPf9Tddta8=',
+  'NameIDFormat' => 'urn:oasis:names:tc:SAML:2.0:nameid-format:transient',
+);
 
 $metadata['https://idp.testshib.org/idp/shibboleth'] = array (
   'entityid' => 'https://idp.testshib.org/idp/shibboleth',

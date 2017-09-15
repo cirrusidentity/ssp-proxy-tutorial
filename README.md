@@ -17,7 +17,7 @@ We've broken the tutorial into several stages
 
 1. [Prerequisites](0_Prereqs)
 2. [Setup an SP](1_SP_Setup)
-3. Setup an IdP
+3. [Setup an IdP](2_IdP_Setup)
 4. Setup a Proxy
 5. Using Modules
 6. Metadata Processing

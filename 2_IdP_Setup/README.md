@@ -77,7 +77,10 @@ Once you save, your changes are live. No need to restart anything
 
 Users will need to authenticate to the IdP in some way. For the
 tutorial purposes we'll have them authenticate using some
-usernames/passwords pre-configured in `authsources.php`
+usernames/passwords pre-configured in `authsources.php`. In a real Idp
+you would use one of the [provided Authentication
+modules](https://simplesamlphp.org/docs/stable/simplesamlphp-idp#section_2),
+or write your own.
 
 Edit that file now and uncomment `tutorial-idp`. This will allow two users (`student` and `employee`) to authenticate with the passwords `sudentpass` and `employeepass`
 
@@ -96,7 +99,10 @@ Edit that file now and uncomment `tutorial-idp`. This will allow two users (`stu
     ),
 ```
 
-You can (test the authentcation source)[https://idp.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/core/authenticate.php] and confirm the 
+You can [test the authentcation source](https://idp.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/core/authenticate.php) and confirm you can login.
+
+![Login](./img/ssp-idp-login.png)
+
 
 ## Changing saml20-idp-hosted.php
 
@@ -105,34 +111,40 @@ that you are running. The `saml20-idp-remote.php` file we saw earlier
 in the tutorial is used for IdPs you trust. Similarily the
 `saml20-sp-remote.php` contains Service Providers you trust.
 
-TODO
+Edit the `saml2-idp-hosted.php` file and
 
+* set `auth` to the name of the authsource you created earlier
+* Enable sha256 for `signature.algorithm`
+* Enable *uri NameFormat* for attributes (the preferred option in most identity federations)
 
+The `cert` folder already contains the SAML signing keys for the
+IdP. This was done so the IdP metadata could be pre-registered with
+some service providers.
 
-# Look Around
+# Metadata
 
 If you are in the admin interface you can browse to [Federation
 tab](https://idp.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/core/frontpage_federation.php)
 and see that there are two trusted SPs already configured and the metadata for your new IdP
 
-Where is that SP metadata configured? In this tutorial we are using
-the `php` formatted metadata contained in
+The trusted SPs were preconfigured for this tutorial and the `php` metadata is in 
 `idp/metadata/saml20-sp-remote.php`
 
+## Register Metadata
 
+Add the IdP metadata to the service provider you created earlier.
 
-
-## Metadata
-
-Add metadata to SP from earlier
-
-TODO: add steps (maybe as details so people can click to drop down
+[View the IdP Metadata](https://idp.tutorial.stack-dev.cirrusidentity.com/simplesaml/saml2/idp/metadata.php?output=xhtml) and copy the `php` formated metadata from near the bottom
+and add it to the SP from part 1 ( `1_SP_Setup/sp/metadata/saml20-idp-remote.php`)
 
 ## Log In
 
-TODO: provice links to authenticate to the service SP from the tutorial and to TestShib SP.
+You can use your IdP to login.
+
+* Tutorial SP.  [Test the SP's `default-sp` authsource](https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/core/authenticate.php?as=default-sp), pick your new IdP and authenticate as `student` or `employee`.
+* Test Shib. [Visit the test Shib SP site](https://sp.testshib.org/) and enter `https://idp.tutorial.stack-dev.cirrusidentity.com/simplesaml/saml2/idp/metadata.php` for the entityId. 
 
 # Summary
 
-You've learned about setting up a service provider, adding metadata and testing authentication.
-In the next section you'll configure an IdP.
+You've learned about setting up an IdP and `exampleauth`
+In the next section you'll configure a Proxy.

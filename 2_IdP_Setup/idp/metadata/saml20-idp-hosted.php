@@ -21,6 +21,7 @@ $metadata['__DYNAMIC:1__'] = array(
 	 * Authentication source to use. Must be one that is configured in
 	 * 'config/authsources.php'.
 	 */
+        // TUTORIAL: TODO: set this to your auth source name
 	'auth' => 'example-userpass',
 
 	/*
@@ -41,9 +42,11 @@ $metadata['__DYNAMIC:1__'] = array(
 	 *
 	 * Please refer to the IdP hosted reference for more information.
 	 */
-	//'signature.algorithm' => 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha256',
+        // TUTORIAL: TODO: uncomment this
+	'signature.algorithm' => 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha256',
 
 	/* Uncomment the following to use the uri NameFormat on attributes. */
+        // TUTORIAL: TODO: uncomment this section
 	/*
 	'attributes.NameFormat' => 'urn:oasis:names:tc:SAML:2.0:attrname-format:uri',
 	'authproc' => array(

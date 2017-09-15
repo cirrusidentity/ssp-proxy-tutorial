@@ -21,7 +21,7 @@ $metadata['__DYNAMIC:1__'] = array(
 	 * Authentication source to use. Must be one that is configured in
 	 * 'config/authsources.php'.
 	 */
-	'auth' => 'example-userpass',
+	'auth' => 'tutorial-idp',
 
 	/*
 	 * WARNING: SHA-1 is disallowed starting January the 1st, 2014.
@@ -41,16 +41,14 @@ $metadata['__DYNAMIC:1__'] = array(
 	 *
 	 * Please refer to the IdP hosted reference for more information.
 	 */
-	//'signature.algorithm' => 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha256',
+	'signature.algorithm' => 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha256',
 
 	/* Uncomment the following to use the uri NameFormat on attributes. */
-	/*
 	'attributes.NameFormat' => 'urn:oasis:names:tc:SAML:2.0:attrname-format:uri',
 	'authproc' => array(
 		// Convert LDAP names to oids.
 		100 => array('class' => 'core:AttributeMap', 'name2oid'),
 	),
-	*/
 
 	/*
 	 * Uncomment the following to specify the registration information in the
