@@ -33,7 +33,7 @@ Proxy.
 
 ## Docker
 
-Follow [Docker's instruction](https://www.docker.com/community-edition#download) to install the Community Edition.
+Follow [Docker's instruction](https://www.docker.com/community-edition#download) to install the stable Community Edition.
 
 
 ## Pull docker images
