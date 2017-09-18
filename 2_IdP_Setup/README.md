@@ -115,11 +115,20 @@ Edit the `saml2-idp-hosted.php` file and
 
 * set `auth` to the name of the authsource you created earlier
 * Enable sha256 for `signature.algorithm`
-* Enable *uri NameFormat* for attributes (the preferred option in most identity federations)
+* Enable *uri NameFormat*  (the preferred option for `saml2int`) for attributes and `authproc` filter.
 
-The `cert` folder already contains the SAML signing keys for the
-IdP. This was done so the IdP metadata could be pre-registered with
-some service providers.
+`authproc` filters are SSPs way to perform processing after
+authentication occurs. This lets you do things like attribute mapping,
+attribute release, etc. In this case it will map the friendly
+attriubte names we defined in `authsources.php` to the OID version of
+those names. This mapping process is controlled by attribute maps. You
+can run `docker exec -it idp head
+/var/simplesamlphp/attributemap/name2oid.php` to get a sense of the
+predefined maps.
+
+ The `cert` folder already contains the SAML
+signing keys for the IdP. This was done so the IdP metadata could be
+pre-registered with some service providers.
 
 # Metadata
 
