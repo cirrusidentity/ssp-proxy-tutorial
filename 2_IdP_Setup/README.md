@@ -7,10 +7,10 @@
 - [Run a container](#run-a-container)
 - [Enable SSP as an IdP](#enable-ssp-as-an-idp)
   - [Changing config.php](#changing-configphp)
-  - [Chaning saml20-idp-hosted.php](#chaning-saml20-idp-hostedphp)
   - [Enable authsource](#enable-authsource)
-- [Look Around](#look-around)
-  - [Metadata](#metadata)
+  - [Changing saml20-idp-hosted.php](#changing-saml20-idp-hostedphp)
+- [Metadata](#metadata)
+  - [Register Metadata](#register-metadata)
   - [Log In](#log-in)
 - [Summary](#summary)
 

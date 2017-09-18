@@ -3,15 +3,22 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Tutorial Prerequisites](#tutorial-prerequisites)
+- [Warning for Windows Users](#warning-for-windows-users)
 - [Assumptions](#assumptions)
 - [Install Software](#install-software)
   - [Docker](#docker)
   - [Pull docker images](#pull-docker-images)
+    - [macOS / Linux](#macos--linux)
+    - [Windows](#windows)
   - [PhpStorm (Optional)](#phpstorm-optional)
   - [Git](#git)
   - [This tutorial](#this-tutorial)
 - [Configure Things](#configure-things)
   - [Run `nginx-proxy`](#run-nginx-proxy)
+    - [macOS / Linux](#macos--linux-1)
+    - [Windows](#windows-1)
+    - [macOS / Linux](#macos--linux-2)
+    - [Windows](#windows-2)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

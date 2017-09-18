@@ -3,12 +3,14 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Setting up an SP](#setting-up-an-sp)
+  - [Answers](#answers)
 - [Run a container](#run-a-container)
 - [Configure It](#configure-it)
   - [Changing config.php](#changing-configphp)
   - [Log In](#log-in)
   - [Metadata](#metadata)
   - [Log In (for real)](#log-in-for-real)
+- [Summary](#summary)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
