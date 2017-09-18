@@ -37,6 +37,7 @@ We also enable the `exampleauth` module by setting an environment
 variable. The docker startup script will then ensure the module is enabled.
 
 ```bash
+cd <git checkout>
 FOLDER=idp
 docker run -d --name idp \
   -e VIRTUAL_PORT=443 \
@@ -46,7 +47,6 @@ docker run -d --name idp \
   -v $PWD/2_IdP_Setup/$FOLDER/config:/var/simplesamlphp/config \
   -v $PWD/2_IdP_Setup/$FOLDER/metadata:/var/simplesamlphp/metadata \
   -v $PWD/2_IdP_Setup/cert:/var/simplesamlphp/cert \
-  -v $PWD/scripts/ssp-startup.sh:/tmp/ssp-startup.sh \
   cirrusid/ssp-base:1.14.16
 ```
 

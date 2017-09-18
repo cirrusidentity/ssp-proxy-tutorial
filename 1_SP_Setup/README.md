@@ -32,6 +32,7 @@ We are going to run a container for the service `https://service.tutorial.stack-
 and mount some configuration files.
 
 ```bash
+cd <git checkout>
 FOLDER=sp
 docker run -d --name service-provider \
   -e VIRTUAL_PORT=443 \
