@@ -33,6 +33,14 @@ $metadata['https://proxy.tutorial.example.org/idp'] = array(
 	'authproc' => array(
 		// Convert LDAP names to oids.
 		100 => array('class' => 'core:AttributeMap', 'name2oid'),
+                150 => array(
+                   'class' => 'core:AttributeAdd',
+                   'favoriteFoods' => array('California Roll', 'Mission Burrito')
+                ),
+                160 => array(
+                   'class' => 'core:AttributeCopy',
+                   'urn:oid:0.9.2342.19200300.100.1.1' => 'duplicateUid',
+                ),
 	),
 
 );

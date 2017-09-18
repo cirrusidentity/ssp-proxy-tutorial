@@ -677,6 +677,8 @@ $config = array(
      */
     'metadata.sources' => array(
         array('type' => 'flatfile'),
+        //TUTORIAL: Add an additional directory for metarefresh
+        array('type' => 'flatfile', 'directory' => 'metadata/testshib/'),
     ),
 
 

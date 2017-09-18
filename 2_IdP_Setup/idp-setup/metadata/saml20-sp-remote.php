@@ -1,4 +1,42 @@
 <?php
+$metadata['https://proxy.tutorial.example.com/sp'] = array (
+  'SingleLogoutService' => 
+  array (
+    0 => 
+    array (
+      'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect',
+      'Location' => 'https://proxy.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/saml/sp/saml2-logout.php/default-sp',
+    ),
+  ),
+  'AssertionConsumerService' => 
+  array (
+    0 => 
+    array (
+      'index' => 0,
+      'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST',
+      'Location' => 'https://proxy.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp',
+    ),
+    1 => 
+    array (
+      'index' => 1,
+      'Binding' => 'urn:oasis:names:tc:SAML:1.0:profiles:browser-post',
+      'Location' => 'https://proxy.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/saml/sp/saml1-acs.php/default-sp',
+    ),
+    2 => 
+    array (
+      'index' => 2,
+      'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact',
+      'Location' => 'https://proxy.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp',
+    ),
+    3 => 
+    array (
+      'index' => 3,
+      'Binding' => 'urn:oasis:names:tc:SAML:1.0:profiles:artifact-01',
+      'Location' => 'https://proxy.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/saml/sp/saml1-acs.php/default-sp/artifact',
+    ),
+  ),
+  'certData' => 'MIIEWjCCA0KgAwIBAgIJAJqmSNipWtlAMA0GCSqGSIb3DQEBBQUAMHsxCzAJBgNVBAYTAkFVMRMwEQYDVQQIEwpTb21lLVN0YXRlMSEwHwYDVQQKExhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQxNDAyBgNVBAMTK3Byb3h5LnR1dG9yaWFsLnN0YWNrLWRldi5jaXJydXNpZGVudGl0eS5jb20wHhcNMTcwOTE4MjExOTEzWhcNMjcwOTE4MjExOTEzWjB7MQswCQYDVQQGEwJBVTETMBEGA1UECBMKU29tZS1TdGF0ZTEhMB8GA1UEChMYSW50ZXJuZXQgV2lkZ2l0cyBQdHkgTHRkMTQwMgYDVQQDEytwcm94eS50dXRvcmlhbC5zdGFjay1kZXYuY2lycnVzaWRlbnRpdHkuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsxex1N28oz6jKEFNWg3TTEJhVRFHjxGksMeh1kHszijydMK/dfrUTCMZu8Pa+KiAySGh0eSm3P8kf/TWShqBapzm54ZCWA3GYlfCLsZUF8S6+MFC5IUA/ZxdlDopD01Am/fLk5g43SBPVoEoi09kKHaa/jm7fEopeR9HXSO54/PVaaK6bBgapkS7Gs+ZIKHsoiUiros/GqUk6TDA4RETY8P1eEYg9iE3NasDO5GrzgzbNkK9OS5mY4qc5sy7ygyL3D2b0vMjm7/M5Vz2VluYZQ8pg6lWlBtyJBjuc99yFThXZH8cjmOB0Y6vBMSBXULbf4Ihm5PI2CIaaHmg2t5E7QIDAQABo4HgMIHdMB0GA1UdDgQWBBRekSBFmRoSV2R5uaH4otns8/ID0TCBrQYDVR0jBIGlMIGigBRekSBFmRoSV2R5uaH4otns8/ID0aF/pH0wezELMAkGA1UEBhMCQVUxEzARBgNVBAgTClNvbWUtU3RhdGUxITAfBgNVBAoTGEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZDE0MDIGA1UEAxMrcHJveHkudHV0b3JpYWwuc3RhY2stZGV2LmNpcnJ1c2lkZW50aXR5LmNvbYIJAJqmSNipWtlAMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEFBQADggEBABYLs2tAlmOxBw7mHGNQZBr7d4Rnecih+PJ1fY+Lw4lZjMG0HjFLBPsvfvMjmcd+8SZTrf0jU/FMIYkPlmpQ+AuDVGMC36ffEwek1yXT9xjcl0+0qFjXklw/dAZCQ7QRyfzv9XcDC7peHkSofB1JCBEvFRuVvGhEi0ryj4hbCLfBj8Z2EHNQpOIEbicBJOmdeUwJoN7qFn5FrAd7b0iejuqPimpfi6mpImPApa4I+umdcsoXSnGUnEOdIUwChnMxeLvG3LdoldL3/wvvT31x0tY6/rmc9QjKUViaqpU5BqhZpgoAkFYQMwf8DKEBL59rRNX7NTM1dnbfF9M7QDmvqLo=',
+);
 
 $metadata['https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/saml/sp/metadata.php/default-sp'] = array (
   'SingleLogoutService' => 
