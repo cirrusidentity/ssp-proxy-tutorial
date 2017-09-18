@@ -73,14 +73,26 @@ setting the `auth` to the `authsource` name of the `SP`. Doing this
 will tell the IdP to use the SP side for authentication.
 
 <details>
-  <summary>Need help setting `auth` name? Click to expand.</summary>
+  <summary>Need help setting *auth* value? Click to expand.</summary>
   <p>
 
-     The `IdP` configuration is in `3_Proxy_Setup/proxy/metadata/saml20-idp-hosted.php` and you want to set the `auth` value to the name of the SP's Auth source in `3_Proxy_Setup/proxy/config/authsources.php`. It should be `defatul-sp`
+The `IdP` configuration is in `3_Proxy_Setup/proxy/metadata/saml20-idp-hosted.php` and you want to set the `auth` value to the name of the SP's Auth source in `3_Proxy_Setup/proxy/config/authsources.php`. It should be `defatul-sp`
 
   </p>
 </details>
 
+# Register metadata with an SP and an IdP
+
+To test out an authentication you'll need to register the proxy's SP metadata with the *IdP* (`https://idp.tutorial.stack-dev.cirrusidentity.com/`) we created earlier
+and the proxy's IdP metadata with the *SP* (`https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/`) we crated earlier.
+
+<details>
+  <summary>Register SP metadata. Click to expand.<summary>
+</details>
+
+<details>
+  <summary>Register IdP metadata. Click to expand.<summary>
+</details>
 
 # Authproc
 
