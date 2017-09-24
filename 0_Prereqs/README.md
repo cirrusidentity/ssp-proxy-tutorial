@@ -123,11 +123,12 @@ docker run --name nginx-proxy \
 ### Windows
 
 ```bash
+set PWD=/c/Users/<current_user>/<path_to_tutorial_check_out>
 docker run --name nginx-proxy ^
   -d ^
   -p 80:80 ^
   -p 443:443 ^
-  -v /c/Users/<current user>/<path_to_tutorial_check_out>/nginx-proxy/certs:/etc/nginx/certs ^
+  -v %PWD%/nginx-proxy/certs:/etc/nginx/certs ^
   -v //var/run/docker.sock:/tmp/docker.sock:ro ^
   jwilder/nginx-proxy
 ```
@@ -151,7 +152,7 @@ docker run --name default-website \
 docker run --name default-website ^
   -e VIRTUAL_HOST=localhost ^
   -d ^
-  -v /c/Users/<current user>/<path_to_tutorial_check_out>/nginx-proxy/sample-index.html:/usr/share/nginx/html/index.html ^
+  -v %PWD%/nginx-proxy/sample-index.html:/usr/share/nginx/html/index.html ^
   -P ^
   -d ^
   nginx
