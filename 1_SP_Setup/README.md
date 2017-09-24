@@ -31,6 +31,8 @@ have already been adjusted. You can reference those if you get stuck.
 We are going to run a container for the service `https://service.tutorial.stack-dev.cirrusidentity.com`
 and mount some configuration files.
 
+## macOs/Linux
+
 ```bash
 cd <git checkout>
 FOLDER=sp
@@ -41,6 +43,22 @@ docker run -d --name service-provider \
   -v $PWD/1_SP_Setup/$FOLDER/config:/var/simplesamlphp/config \
   -v $PWD/1_SP_Setup/$FOLDER/metadata:/var/simplesamlphp/metadata \
   -v $PWD/1_SP_Setup/cert:/var/simplesamlphp/cert \
+  cirrusid/ssp-base:1.14.16
+```
+
+## Windows
+
+```bash
+cd <git checkout>
+set PWD=/c/Users/<current_user>/<path_to_tutorial_check_out>
+set FOLDER=sp
+docker run -d --name service-provider ^
+  -e VIRTUAL_PORT=443 ^
+  -e VIRTUAL_PROTO=https ^
+  -e VIRTUAL_HOST=service.tutorial.stack-dev.cirrusidentity.com ^
+  -v %PWD%/1_SP_Setup/%FOLDER%/config:/var/simplesamlphp/config ^
+  -v %PWD%/1_SP_Setup/%FOLDER%/metadata:/var/simplesamlphp/metadata ^
+  -v %PWD%/1_SP_Setup/cert:/var/simplesamlphp/cert ^
   cirrusid/ssp-base:1.14.16
 ```
 
@@ -70,7 +88,7 @@ In your favorite editor edit `sp/config/config.php` and change
 * `secretsalt`
 * `session.cookie.secure`
 
-Once you save your changes are live. No need to restart anything
+The comments in `config.php` will provide hints. Once you save your changes are live. No need to restart anything
 
 ## Log In
 
@@ -119,7 +137,7 @@ We've already registerd the tutorial SP with the IdPs in the below table.
 To incorporate the metadata in you SP, do:
 
 1. Create a `php` metadta file for the idps in `sp/metadata/saml20-idp-remote.php`
-   1. `echo -e '<?php \n' > sp/metadata/saml20-idp-remote.php` 
+   1. `echo -e '<?php \n' > sp/metadata/saml20-idp-remote.php` (For Windows, just use a text editor to create the metadata file).
 1. For each IdP:
    1. Download the metadata to your machine.
    2. Goto SSP's [metadata converter](https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/admin/metadata-converter.php)
