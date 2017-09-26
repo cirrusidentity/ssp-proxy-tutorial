@@ -120,7 +120,7 @@ Edit the `saml2-idp-hosted.php` file and
 `authproc` filters are SSPs way to perform processing after
 authentication occurs. This lets you do things like attribute mapping,
 attribute release, etc. In this case it will map the friendly
-attriubte names we defined in `authsources.php` to the OID version of
+attribute names we defined in `authsources.php` to the OID version of
 those names. This mapping process is controlled by attribute maps. You
 can run `docker exec -it idp head
 /var/simplesamlphp/attributemap/name2oid.php` to get a sense of the
