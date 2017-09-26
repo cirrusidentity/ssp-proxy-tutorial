@@ -5,6 +5,8 @@
 - [Setting up an SP](#setting-up-an-sp)
   - [Answers](#answers)
 - [Run a container](#run-a-container)
+  - [macOs/Linux](#macoslinux)
+  - [Windows](#windows)
 - [Configure It](#configure-it)
   - [Changing config.php](#changing-configphp)
   - [Log In](#log-in)

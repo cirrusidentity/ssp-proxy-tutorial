@@ -6,9 +6,13 @@
   - [Answers](#answers)
 - [Run a container](#run-a-container)
 - [Combining SP and IdP](#combining-sp-and-idp)
+- [Register metadata with an SP and an IdP](#register-metadata-with-an-sp-and-an-idp)
 - [Authproc](#authproc)
 - [Automated Metadata](#automated-metadata)
-- [Authfacebook](#authfacebook)
+  - [Metadata Config](#metadata-config)
+  - [cron config](#cron-config)
+  - [config.php metadata sources](#configphp-metadata-sources)
+  - [confirm metadata is available](#confirm-metadata-is-available)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
