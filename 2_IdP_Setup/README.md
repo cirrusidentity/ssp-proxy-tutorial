@@ -36,6 +36,7 @@ and mount some configuration files.
 We also enable the `exampleauth` module by setting an environment
 variable. The docker startup script will then ensure the module is enabled.
 
+## macOS/Linux
 ```bash
 cd <git checkout>
 FOLDER=idp
@@ -47,6 +48,22 @@ docker run -d --name idp \
   -v $PWD/2_IdP_Setup/$FOLDER/config:/var/simplesamlphp/config \
   -v $PWD/2_IdP_Setup/$FOLDER/metadata:/var/simplesamlphp/metadata \
   -v $PWD/2_IdP_Setup/cert:/var/simplesamlphp/cert \
+  cirrusid/ssp-base:1.14.16
+```
+
+##Windows
+```bash
+cd <git checkout>
+set PWD=/c/Users/<current_user>/<path_to_tutorial_check_out>
+set FOLDER=idp
+docker run -d --name idp ^
+  -e VIRTUAL_PORT=443 ^
+  -e VIRTUAL_PROTO=https ^
+  -e VIRTUAL_HOST=idp.tutorial.stack-dev.cirrusidentity.com ^
+  -e SSP_ENABLED_MODULES='exampleauth' ^
+  -v %PWD%/2_IdP_Setup/%FOLDER%/config:/var/simplesamlphp/config ^
+  -v %PWD%/2_IdP_Setup/%FOLDER%/metadata:/var/simplesamlphp/metadata ^
+  -v %PWD%/2_IdP_Setup/cert:/var/simplesamlphp/cert ^
   cirrusid/ssp-base:1.14.16
 ```
 
