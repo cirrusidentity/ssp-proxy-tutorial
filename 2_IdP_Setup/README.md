@@ -51,7 +51,7 @@ docker run -d --name idp \
   cirrusid/ssp-base:1.14.16
 ```
 
-##Windows
+## Windows
 ```bash
 cd <git checkout>
 set PWD=/c/Users/<current_user>/<path_to_tutorial_check_out>
