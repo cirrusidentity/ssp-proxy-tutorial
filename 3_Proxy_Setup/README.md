@@ -143,8 +143,8 @@ We can also test the Proxy with Test Shib. If you recall from earlier, when visi
 We'll use SSPs `metarefresh` module to [automatically pull and
 validate](https://simplesamlphp.org/docs/stable/simplesamlphp-automated_metadata)
 the metadata.  The `metarefresh` is triggered by the `cron` module to
-peridoically download metadata. These two modules are disabled by
-default, however the docker command you ran ealier enabled them for
+periodically download metadata. These two modules are disabled by
+default, however the docker command you ran earlier enabled them for
 the proxy.
 
 ## Metadata Config
