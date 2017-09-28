@@ -42,6 +42,7 @@ and mount some configuration files.
 We also enable the enable a few modules by setting an environment
 variable. The docker startup script will then ensure the module is enabled.
 
+## macOS/Linux
 ```bash
 cd <git checkout>
 FOLDER=proxy
@@ -53,6 +54,21 @@ docker run -d --name proxy \
   -v $PWD/3_Proxy_Setup/$FOLDER/config:/var/simplesamlphp/config \
   -v $PWD/3_Proxy_Setup/$FOLDER/metadata:/var/simplesamlphp/metadata \
   -v $PWD/3_Proxy_Setup/cert:/var/simplesamlphp/cert \
+  cirrusid/ssp-base:1.14.16
+```
+## Windows
+```bash
+cd <git checkout>
+set PWD=/c/Users/<current_user>/<path_to_tutorial_check_out>
+set FOLDER=proxy
+docker run -d --name proxy ^
+  -e VIRTUAL_PORT=443 ^
+  -e VIRTUAL_PROTO=https ^
+  -e VIRTUAL_HOST=proxy.tutorial.stack-dev.cirrusidentity.com ^
+  -e SSP_ENABLED_MODULES="cron metarefresh authfacebook" ^
+  -v %PWD%/3_Proxy_Setup/%FOLDER%/config:/var/simplesamlphp/config ^
+  -v %PWD%/3_Proxy_Setup/%FOLDER%/metadata:/var/simplesamlphp/metadata ^
+  -v %PWD%/3_Proxy_Setup/cert:/var/simplesamlphp/cert ^
   cirrusid/ssp-base:1.14.16
 ```
 
