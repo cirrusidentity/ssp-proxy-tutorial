@@ -80,7 +80,7 @@ will tell the IdP to use the SP side for authentication.
   <summary>Need help setting <i>auth</i> value? Click to expand.</summary>
   <p>
 
-The `IdP` configuration is in `3_Proxy_Setup/proxy/metadata/saml20-idp-hosted.php` and you want to set the `auth` value to the name of the SP's Auth source in `3_Proxy_Setup/proxy/config/authsources.php`. It should be `defatul-sp`
+The `IdP` configuration is in `3_Proxy_Setup/proxy/metadata/saml20-idp-hosted.php` and you want to set the `auth` value to the name of the SP's Auth source in `3_Proxy_Setup/proxy/config/authsources.php`. It should be `default-sp`
 
   </p>
 </details>
