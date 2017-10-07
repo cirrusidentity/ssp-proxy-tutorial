@@ -138,7 +138,7 @@ We'll add some IdP SAML metadata to the SP to let us authenticate. For simplicit
 We've already registerd the tutorial SP with the IdPs in the below table.
 To incorporate the metadata in you SP, do:
 
-1. Create a `php` metadta file for the idps in `sp/metadata/saml20-idp-remote.php`
+1. Create a `php` metadata file for the idps in `sp/metadata/saml20-idp-remote.php`
    1. `echo -e '<?php \n' > sp/metadata/saml20-idp-remote.php` (For Windows, just use a text editor to create the metadata file).
 1. For each IdP:
    1. Download the metadata to your machine.
