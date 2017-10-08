@@ -104,7 +104,10 @@ The `IdP` configuration is in `3_Proxy_Setup/proxy/metadata/saml20-idp-hosted.ph
 # Register metadata with an SP and an IdP
 
 To test out an authentication you'll need to register the proxy's SP metadata with the *IdP* (`https://idp.tutorial.stack-dev.cirrusidentity.com/`) we created earlier
-and the proxy's IdP metadata with the *SP* (`https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/`) we created earlier.
+and the proxy's IdP metadata with the *SP* (`https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/`) we created earlier. 
+<p>
+<img src="proxy_config_metadata.png" alt="Proxy Config Diagram" style="height:100px;">
+</p>
 
 <details>
   <summary>Register SP metadata. Click to expand.</summary>
