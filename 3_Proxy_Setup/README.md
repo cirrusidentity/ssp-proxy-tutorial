@@ -50,7 +50,7 @@ docker run -d --name proxy \
   -e VIRTUAL_PORT=443 \
   -e VIRTUAL_PROTO=https \
   -e VIRTUAL_HOST=proxy.tutorial.stack-dev.cirrusidentity.com \
-  -e SSP_ENABLED_MODULES='cron metarefresh authfacebook' \
+  -e SSP_ENABLED_MODULES='cron metarefresh' \
   -v $PWD/3_Proxy_Setup/$FOLDER/config:/var/simplesamlphp/config \
   -v $PWD/3_Proxy_Setup/$FOLDER/metadata:/var/simplesamlphp/metadata \
   -v $PWD/3_Proxy_Setup/cert:/var/simplesamlphp/cert \
