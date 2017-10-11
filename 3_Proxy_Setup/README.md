@@ -5,6 +5,8 @@
 - [Setting up a SAML Proxy](#setting-up-a-saml-proxy)
   - [Answers](#answers)
 - [Run a container](#run-a-container)
+  - [macOS/Linux](#macoslinux)
+  - [Windows](#windows)
 - [Combining SP and IdP](#combining-sp-and-idp)
 - [Register metadata with an SP and an IdP](#register-metadata-with-an-sp-and-an-idp)
 - [Authproc](#authproc)

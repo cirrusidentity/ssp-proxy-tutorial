@@ -2,17 +2,14 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Setting up a SAML Proxy](#setting-up-a-saml-proxy)
+- [Setting up a MultiProtocol Proxy](#setting-up-a-multiprotocol-proxy)
   - [Answers](#answers)
 - [Run a container](#run-a-container)
-- [Combining SP and IdP](#combining-sp-and-idp)
-- [Register metadata with an SP and an IdP](#register-metadata-with-an-sp-and-an-idp)
-- [Authproc](#authproc)
-- [Automated Metadata](#automated-metadata)
-  - [Metadata Config](#metadata-config)
-  - [cron config](#cron-config)
-  - [config.php metadata sources](#configphp-metadata-sources)
-  - [confirm metadata is available](#confirm-metadata-is-available)
+  - [macOS/Linux](#macoslinux)
+  - [Windows](#windows)
+- [Adding New Authsources](#adding-new-authsources)
+- [Make the Proxy IdP use multiple auth sources](#make-the-proxy-idp-use-multiple-auth-sources)
+  - [Virtual SSO Endpoints](#virtual-sso-endpoints)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -107,5 +104,89 @@ For `facebook` you can use the following, pre-registered information
 3. Test the [facebook authentication](https://proxy.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/core/authenticate.php?as=facebook)
   </p>
 </details>
+
+<details>
+  <summary>Enable Exampleauth. Need a hint? Click to expand.</summary>
+  <p>
+
+1. Edit `multi/config/authsources.php`
+2. Add an `exampleauth` authsource
+
+```php
+    'exampleauth' => array(
+        'exampleauth:UserPass',
+        // Format is  username:passwor => array( attributes )
+        'student:studentpass' => array(
+            'uid' => array('test'),
+            'eduPersonAffiliation' => array('member', 'student'),
+        ),
+        'employee:employeepass' => array(
+            'uid' => array('employee'),
+            'eduPersonAffiliation' => array('member', 'employee'),
+        ),
+    ),
+
+```
+
+3. Test the [exampleauth authentication](https://proxy.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/core/authenticate.php?as=exampleauth)
+
+  </p>
+</details>
+
+# Make the Proxy IdP use multiple auth sources
+
+The Proxy IdP configuration (in
+`multi-setup/metadata/saml20-idp-hosted.php`) has its `auth`
+configured to use the `default-sp` authsource. How can it be
+configured to use multiple authsources? How does a user indicate which
+one to use, if there are multiple?
+
+The
+[multiauth](https://simplesamlphp.org/docs/stable/multiauth:multiauth)
+enables this functionality.  Review the `multiauth` documentation,
+create an `authsource` called `multi` that can make use of the three existing
+authsources and update the IdP to use it.
+
+<details>
+  <summary>Enable multiauth. Need a hint? Click to expand.</summary>
+  <p>
+
+1. Edit `multi/config/authsources.php`
+2. Add an `multi` authsource
+
+```php
+    'multi' => array(
+        'multiauth:MultiAuth',
+        'sources' => array(
+            'default-sp' => array(
+                'text' => array(
+                    'en' => 'SAML Identity Providers',
+                ),
+            ),
+            'facebook' => array(
+                'text' => array(
+                    'en' => 'Facebook',
+                ),
+            ),
+            'exampleauth' => array(
+                'text' => array(
+                    'en' => 'Test Accounts',
+                ),
+            ),
+        ),
+    )
+```
+
+3. Test the [multiauth authentication](https://proxy.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/core/authenticate.php?as=multi)
+
+  </p>
+</details>
+
+TODO: issue authnrequest from SP
+
+
+## Virtual SSO Endpoints
+
+TODO: expand
 
 

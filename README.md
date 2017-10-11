@@ -30,7 +30,7 @@ the debugging section below.
 2. [Setup an SP](1_SP_Setup)
 3. [Setup an IdP](2_IdP_Setup)
 4. [Setup a Proxy](3_Proxy_Setup)
-5. Using Modules
+5. [Multiple Protocols](4_MultiProtocol)
 
 # Debugging Things
 

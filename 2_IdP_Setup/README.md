@@ -5,6 +5,8 @@
 - [Setting up an IdP](#setting-up-an-idp)
   - [Answers](#answers)
 - [Run a container](#run-a-container)
+  - [macOS/Linux](#macoslinux)
+  - [Windows](#windows)
 - [Enable SSP as an IdP](#enable-ssp-as-an-idp)
   - [Changing config.php](#changing-configphp)
   - [Enable authsource](#enable-authsource)
