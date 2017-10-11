@@ -9,7 +9,6 @@
   - [Windows](#windows)
 - [Adding New Authsources](#adding-new-authsources)
 - [Make the Proxy IdP use multiple auth sources](#make-the-proxy-idp-use-multiple-auth-sources)
-  - [Virtual SSO Endpoints](#virtual-sso-endpoints)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -188,6 +187,8 @@ You should see something like
   </p>
 </details>
 
+  
+
 Once you have that complete you can visit the [test
 SP](https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/core/authenticate.php?as=default-sp),
 pick the Proxy IdP and then authenticate with Facebook. The proxy will
@@ -217,7 +218,7 @@ names most SPs will expect? Try to add an [AuthProc filter](https://simplesamlph
 
         // The rest of your authproc filters follow
     ),
-
+```
 4. Perform your login again
 
   </p>
@@ -225,6 +226,38 @@ names most SPs will expect? Try to add an [AuthProc filter](https://simplesamlph
 
 ## Virtual SSO Endpoints
 
-TODO: expand
+Multiauth presents an auth discovery page to the user. If you, or the
+SP know which `auth` mechanism to use you can by pass this discovery
+using the `source=authname` query parameter.
 
+For example on auth testing page, using
+[`as=multi&source=exampleauth`](https://proxy.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/core/authenticate.php?as=multi&source=exampleauth)
+will tell the multiAuth module to choose exampleauth.
+
+If your SP is using pair-wise federation (rather than a mesh
+federation, such as InCommon) or has you manualy specify the
+`SingleSignOnService` URL than you can add the source to that
+URL.
+
+You can test this out by editing the
+`1_SP_Setup/sp-setup/metadata/saml20-idp-remote.php` file for service
+provider created in part 1, and addding the `source` query parameter.
+Be sure to edit the metadata for entity
+`https://proxy.tutorial.example.org/idp`
+
+```php
+
+  'SingleSignOnService' => 
+  array (
+    0 => 
+    array (
+      'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect',
+      'Location' => 'https://proxy.tutorial.stack-dev.cirrusidentity.com/simplesaml/saml2/idp/SSOService.php?source=facebook',
+    ),
+  ),
+```
+
+And now you can [test the SP's authentication
+source](https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/core/authenticate.php?as=default-sp)
+and verify the `multiauth` discovery is bypassed.
 
