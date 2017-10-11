@@ -179,11 +179,49 @@ authsources and update the IdP to use it.
 
 3. Test the [multiauth authentication](https://proxy.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/core/authenticate.php?as=multi)
 
+You should see something like
+![Auth Selection](./img/multi-auth.png)
+
+4. Edit `multi/metadata/saml20-idp-hosted.php` and set `auth` to `multi`
+
+
   </p>
 </details>
 
-TODO: issue authnrequest from SP
+Once you have that complete you can visit the [test
+SP](https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/core/authenticate.php?as=default-sp),
+pick the Proxy IdP and then authenticate with Facebook. The proxy will
+turn the Facebook attributes into SAML attributes, add the
+`favoriteFoods` attribute we defined earlier and assert that back to
+the SP. Did you notice the facebook attribute names are things like
+`facebook.name` and `facebook.id` rather than the OID or LDAP friendly
+names most SPs will expect? Try to add an [AuthProc filter](https://simplesamlphp.org/docs/stable/simplesamlphp-authproc#section_2) to change those attribute names
 
+
+<details>
+  <summary>Change Attribute Names. Need a hint? Click to expand.</summary>
+  <p>
+
+1. Edit `multi/metadata/saml20-idp-hosted.php` to add a new authproc filter.
+2. [`core:AttributeMap`](https://simplesamlphp.org/docs/stable/core:authproc_attributemap) can perform mapping and it can make use of predefined maps in [SSP's attributemap folder](https://github.com/simplesamlphp/simplesamlphp/tree/master/attributemap)
+3. Add `facebook2name`
+```php
+    'authproc' => array(
+        // Convert Facebook names to oids.
+        90 => array(
+            'class' => 'core:AttributeMap',
+            'facebook2name',
+            //ID isn't defined in the map
+            'facebook.id' => 'uid',
+        ),
+
+        // The rest of your authproc filters follow
+    ),
+
+4. Perform your login again
+
+  </p>
+</details>
 
 ## Virtual SSO Endpoints
 

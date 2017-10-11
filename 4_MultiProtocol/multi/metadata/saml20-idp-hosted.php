@@ -22,7 +22,7 @@ $metadata['https://proxy.tutorial.example.org/idp'] = array(
 	 * Authentication source to use. Must be one that is configured in
 	 * 'config/authsources.php'.
 	 */
-        // TUTORIAL: TODO: set this to the SP  `authsource.php` name
+        // TUTORIAL: TODO: set this to the multi  `authsource.php` name
 	'auth' => 'default-sp',
 
 	'signature.algorithm' => 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha256',
