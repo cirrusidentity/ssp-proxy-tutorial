@@ -29,9 +29,9 @@ If one or more of the SAML IdPs you are "fronting" use ADFS as the IdP technolog
 
 ```
 
-This (usefully in some cases, we've taken advantage of that RequesterId info in a couple of deployments) tells the "proxied IdP" the actual service (SP entityID) that is asking for authentication. But ADFS will reject any AuthnRequests containing that Scoping element, replying with a SAML error that there it doesn't know how to deal with a Scoping element.
+This (usefully in some cases, Unicon has taken advantage of that RequesterId info in a couple of deployments) tells the "proxied IdP" the actual service (SP entityID) that is asking for authentication. But ADFS will reject any AuthnRequests containing that Scoping element, replying with a SAML error that there it doesn't know how to deal with a Scoping element.
 
-So if you want to proxy ADFS, you need to modify SimpleSAMLphp to *not* include that Scoping element when the IdP is an ADFS-based one. One fix for this which we have made, and proposed be included in future releases of SimpleSAMLphp, can be found here:
+So if you want to proxy ADFS, you need to modify SimpleSAMLphp to *not* include that Scoping element when the IdP is an ADFS-based one. One fix for this which Unicon has made, and proposed be included in future releases of SimpleSAMLphp, can be found here:
 
   https://github.com/simplesamlphp/simplesamlphp/issues/498
     (as a comment by "mapgrady" on May 15)

@@ -9,6 +9,7 @@
 - [Uniform IdP Interface](#uniform-idp-interface)
 - [Hub and Spoke Federation](#hub-and-spoke-federation)
 - [Adapter for non-federation friendly IDaaS providers](#adapter-for-non-federation-friendly-idaas-providers)
+- [Account Linking](#account-linking)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -16,7 +17,8 @@
 
 A proxy provides you with lots of flebility in how authentication happens.
 
-A basic example is this diagram form SURFNet that illustrates how several IdPs apppear as a single IdP to Google Apss
+A basic example is this diagram form SURFNet that illustrates how several IdPs apppear as a single IdP to Google Apps
+
 ![Basic Concept](./img/basic-concept.png)
 
 SSP provides several places where you can tie into the authentication process. Diagram from @mapgrady
@@ -50,3 +52,7 @@ Example: State-wide K-12 organization running SimpleSAMLphp to front varying aut
 
 IDaaS providers, such as Okta and Azure AD, usually have problems integrating with federations. A proxy can allow
 the federations and IDaaS providers to operate together.
+
+# Account Linking
+
+A user may log in with one of several accounts and have the same persistent identifier asserted, regardless of the originating Idp.

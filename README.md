@@ -31,7 +31,7 @@ The tutorial was created by
 # Usecases
 
 Unsure why you would even want to use a SAML Proxy?
-[View some use cases](USE-CASES.md)
+[View some use cases](USE_CASES.md)
 
 # Gotchas
 
