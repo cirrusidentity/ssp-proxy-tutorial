@@ -1,3 +1,16 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Scope Checking](#scope-checking)
+- [Scoping and ADFS](#scoping-and-adfs)
+- [ForceAuth](#forceauth)
+- [Incorrect AuthnInstant](#incorrect-authninstant)
+- [NameID required](#nameid-required)
+- [SessionNotOnOrAfter and short proxy sessions](#sessionnotonorafter-and-short-proxy-sessions)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Scope Checking
 
 The proxy needs to perform scope checking on any scoped attributes. This is not enabled by default. You'll need to use a FilterScopes module:

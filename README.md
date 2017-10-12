@@ -3,6 +3,8 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Overview](#overview)
+- [Usecases](#usecases)
+- [Gotchas](#gotchas)
 - [Tutorial Stages](#tutorial-stages)
 - [Debugging Things](#debugging-things)
   - [Enable `showerrors`](#enable-showerrors)

@@ -9,6 +9,7 @@
   - [Windows](#windows)
 - [Adding New Authsources](#adding-new-authsources)
 - [Make the Proxy IdP use multiple auth sources](#make-the-proxy-idp-use-multiple-auth-sources)
+  - [Virtual SSO Endpoints](#virtual-sso-endpoints)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

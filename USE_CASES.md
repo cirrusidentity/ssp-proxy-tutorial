@@ -1,3 +1,17 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Overview](#overview)
+- [Protocol Bridge](#protocol-bridge)
+- [Service Provider only supports single IdP](#service-provider-only-supports-single-idp)
+- [Policy enforcement/Attribute Enrichment](#policy-enforcementattribute-enrichment)
+- [Uniform IdP Interface](#uniform-idp-interface)
+- [Hub and Spoke Federation](#hub-and-spoke-federation)
+- [Adapter for non-federation friendly IDaaS providers](#adapter-for-non-federation-friendly-idaas-providers)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Overview
 
 A proxy provides you with lots of flebility in how authentication happens.
