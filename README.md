@@ -21,6 +21,21 @@ Proxy with SimpleSAMLphp. The tutorial uses docker to minimize the
 amount of configuration changes and software you need to install on
 your machine.
 
+The tutorial was created by
+
+* [Cirrus Identity](https://www.cirrusidentity.com/)
+* [Unicon](https://www.unicon.net/)
+
+# Usecases
+
+Unsure why you would even want to use a SAML Proxy?
+[View some use cases](USE-CASES.md)
+
+# Gotchas
+
+There can be some surprises when using a proxy.
+[View some gotchas](GOTCHAS.md)
+
 # Tutorial Stages
 
 We've broken the tutorial into several stages. If you get stuck, see
