@@ -5,7 +5,10 @@
 - [Overview](#overview)
 - [Usecases](#usecases)
 - [Gotchas](#gotchas)
-- [Tutorial Stages](#tutorial-stages)
+- [SSP Layout](#ssp-layout)
+- [Tutorial](#tutorial)
+  - [Schedule](#schedule)
+  - [Stages](#stages)
 - [Debugging Things](#debugging-things)
   - [Enable `showerrors`](#enable-showerrors)
   - [View logs](#view-logs)
@@ -25,8 +28,8 @@ your machine.
 
 The tutorial was created by
 
-* [Cirrus Identity](https://www.cirrusidentity.com/)
-* [Unicon](https://www.unicon.net/)
+* [Cirrus Identity](https://www.cirrusidentity.com/) Patrick Radtke patrick@cirrusidentity.com
+* [Unicon](https://www.unicon.net/) Michael Grady mgrady@unicon.net 
 
 # Usecases
 
@@ -38,7 +41,54 @@ Unsure why you would even want to use a SAML Proxy?
 There can be some surprises when using a proxy.
 [View some gotchas](GOTCHAS.md)
 
-# Tutorial Stages
+# SSP Layout
+
+New to SSP? Here is where the installation files are
+
+```
+/var/simplesamlphp
+|-- attributemap
+|   |-- facebook2name.php
+|   |-- name2oid.php
+|   `-- etc
+|-- cert
+|   |-- saml.crt
+|   `-- saml.pem
+|-- config
+|   |-- authsources.php
+|   `-- config.php
+|-- config-templates
+|   `-- various sample configuraltion files
+|-- data (storage of temp files)
+|-- dictionaries
+|   `-- text strings for supporting i18n
+|-- lib (part the code base)
+|-- metadata
+|   `-- saml20-idp-remote.php
+|-- modules
+|   |-- authfacebook (option module to use facebook for auth)
+|   |-- core (the core functionality)
+|   `-- numerous other modules
+|-- templates (UI templates you can override)
+|-- vendor (dependencies)
+`-- www (main webapp. Modules can extend)
+```
+
+# Tutorial
+
+## Schedule
+
+| Time | Topic |
+| ---  | ---   |
+| 1 - 1:10 | Overview |
+| 1:10 - 1:40 | [Setup an SP](1_SP_Setup) |
+| 1:40 - 2:25 | [Setup an IdP](2_IdP_Setup) |
+| 2:25 - 3:00 | [Setup a Proxy](3_Proxy_Setup) |
+| 3:00 - 3:30 | Break |
+| 3:30 - 4:15 | [Multiple Protocols](4_MultiProtocol) |
+| 4:15 - 5:00 | Q & A|
+
+## Stages
 
 We've broken the tutorial into several stages. If you get stuck, see
 the debugging section below.
