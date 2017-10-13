@@ -81,6 +81,8 @@ Now that we have an SSP running we'll configure it as an IdP.
 
 The [SSP documentation](https://simplesamlphp.org/docs/stable) is fairly thorough. However to aid in creating a smooth tutorial we've already done several steps for you.
 
+Note that you will find the idp/ directory referred to below in the ssp-proxy-tutorial/2\_IdP\_Setup/ directory.
+
 ## Changing config.php
 
  `config.php` has already been updated to set thing like `adminpassword` and `secretsalt`. There are you few options you'll configure
@@ -130,7 +132,7 @@ that you are running. The `saml20-idp-remote.php` file we saw earlier
 in the tutorial is used for IdPs you trust. Similarily the
 `saml20-sp-remote.php` contains Service Providers you trust.
 
-Edit the `saml2-idp-hosted.php` file and
+Edit the `saml2-idp-hosted.php` file (it is in the idp/metadata directory) and
 
 * set `auth` to the name of the authsource you created earlier
 * Enable sha256 for `signature.algorithm`

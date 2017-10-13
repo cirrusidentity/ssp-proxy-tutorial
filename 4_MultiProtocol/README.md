@@ -174,7 +174,7 @@ authsources and update the IdP to use it.
                 ),
             ),
         ),
-    )
+    ),
 ```
 
 3. Test the [multiauth authentication](https://proxy.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/core/authenticate.php?as=multi)

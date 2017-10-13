@@ -78,6 +78,8 @@ Now that we have an SSP running we'll configure it as an SP and login to it thro
 
 The [SSP documentation](https://simplesamlphp.org/docs/stable) is fairly thorough. However to aid in creating a smooth tutorial we've already done several steps for you.
 
+Note that you will find the sp/ directory referred to below in the ssp-proxy-tutorial/1\_SP\_Setup/ directory.
+
 ## Changing config.php
 
 You'll want to change several settings in `config.php` to lock things down.
@@ -136,10 +138,10 @@ No IdPs are listed because the SP doesn't have the metadata for any IdPs.
 We'll add some IdP SAML metadata to the SP to let us authenticate. For simplicity we'll add metadata in SSP's php format, but in a later part of the tutorial we'll use the `metarefresh` module to do periodic fetching, validation and processing of a metadata aggregate (such as the InCommon aggregate).
 
 We've already registerd the tutorial SP with the IdPs in the below table.
-To incorporate the metadata in you SP, do:
+To incorporate the metadata in your SP, do:
 
 1. Create a `php` metadata file for the idps in `sp/metadata/saml20-idp-remote.php`
-   1. `echo -e '<?php \n' > sp/metadata/saml20-idp-remote.php` (For Windows, just use a text editor to create the metadata file).
+   1. `echo -e '<?php \n' > sp/metadata/saml20-idp-remote.php` (For Windows, just use a text editor to create the metadata file). You just want the first line of the file to be (not including the quotes) '<?php', ready to paste PHP config from the "metadata conversion process" detailed below.
 1. For each IdP:
    1. Download the metadata to your machine.
    2. Goto SSP's [metadata converter](https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/admin/metadata-converter.php)

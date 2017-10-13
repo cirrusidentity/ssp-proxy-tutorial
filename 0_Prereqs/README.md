@@ -158,4 +158,4 @@ docker run --name default-website ^
   nginx
 ```
 
-And visit http://localhost/ in your browser
+And visit http://localhost/ in your browser.  This should present a page saying "Hello Tutorial Person".
