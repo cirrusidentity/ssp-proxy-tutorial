@@ -16,7 +16,7 @@
 
 # Setting up a MultiProtocol Proxy
 
-In this tutorial we are going to setup a proxy that can speack
+In this tutorial we are going to setup a proxy that can speak
 multiple protocols and translate those into SAML
 
 ## Answers
@@ -81,7 +81,7 @@ Add two new authsources: one for [facebook (search the linked doc for `facebook`
 For `facebook` you can use the following, pre-registered information
 
 * API key: 133972730583345
-* API secret: e6f64db13ce933958b1cc175567f9a7c
+* API secret: 36aefb235314bad5df075363b79cbbcd
 * Test user email: techex_qclvvnr_user@tfbnw.net
 * Test user password: `TacoTaco`
 
