@@ -64,7 +64,9 @@ New to SSP? Here is where the installation files are
 |   `-- text strings for supporting i18n
 |-- lib (part the code base)
 |-- metadata
-|   `-- saml20-idp-remote.php
+|   |-- saml20-idp-hosted.php
+|   |-- saml20-idp-remote.php
+|   `-- saml20-sp-remote.php
 |-- modules
 |   |-- authfacebook (option module to use facebook for auth)
 |   |-- core (the core functionality)
