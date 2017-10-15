@@ -126,7 +126,7 @@ and the proxy's IdP metadata with the *SP* (`https://service.tutorial.stack-dev.
   <p>
 
 1. View the [IdP metadata](https://proxy.tutorial.stack-dev.cirrusidentity.com/simplesaml/saml2/idp/metadata.php?output=xhtml), scroll down and copy the `php` formatted metadata.
-2. Edit the IdP metadata file for the SP from part 1 of the tutorial. Edit `1_SP_Setup/sp-setup/metadata/saml20-idp-remote.php` and paste in the metadata.
+2. Edit the IdP metadata file for the SP from part 1 of the tutorial. Edit `1_SP_Setup/sp/metadata/saml20-idp-remote.php` and paste in the metadata.
 
   </p>
 </details>
@@ -170,7 +170,7 @@ the proxy.
 
 ## Metadata Config
 
-View `proxy-setup/config/config-metarefresh.php`. This is where you
+View `proxy/config/config-metarefresh.php`. This is where you
 configure where to pull external metadata from. In the below
 configuration we are pulling the test shib metadata and caching it for
 4 days. We'll store it in the `outputDir` which is relative to the

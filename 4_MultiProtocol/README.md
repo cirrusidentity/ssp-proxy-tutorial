@@ -136,7 +136,7 @@ For `facebook` you can use the following, pre-registered information
 # Make the Proxy IdP use multiple auth sources
 
 The Proxy IdP configuration (in
-`multi-setup/metadata/saml20-idp-hosted.php`) has its `auth`
+`multi/metadata/saml20-idp-hosted.php`) has its `auth`
 configured to use the `default-sp` authsource. How can it be
 configured to use multiple authsources? How does a user indicate which
 one to use, if there are multiple?
@@ -241,7 +241,7 @@ federation, such as InCommon) or has you manualy specify the
 URL.
 
 You can test this out by editing the
-`1_SP_Setup/sp-setup/metadata/saml20-idp-remote.php` file for service
+`1_SP_Setup/sp/metadata/saml20-idp-remote.php` file for service
 provider created in part 1, and addding the `source` query parameter.
 Be sure to edit the metadata for entity
 `https://proxy.tutorial.example.org/idp`
