@@ -132,6 +132,8 @@ and the proxy's IdP metadata with the *SP* (`https://service.tutorial.stack-dev.
 </details>
 
 
+**note:** The discovery page for the test SP and the proxy look the same. Visually it is hard to tell when you transition from the test SP to the proxy. Look at the URL to see that you've changed servers (`service.tutorial.` vs `proxy.tutorial.`). This often throws people off in the next step of the tutorial.
+
 Now confirm it works by visiting the [test auth](https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/core/authenticate.php?as=default-sp) of the SP from part 1, and select the Proxy IdP. This will then make an `AuthNRequest` to the proxy, which will show its own discovery page (that looks identical). Pick the tutorial idp and authenticate. If everything was successful then you'll end up back on the original SP with some attributes displayed.
 
 # Authproc

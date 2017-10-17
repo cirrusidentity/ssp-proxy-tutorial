@@ -103,6 +103,8 @@ time so we'll use an
 [nginx-proxy](https://hub.docker.com/r/jwilder/nginx-proxy/) to listen
 on 80/443 and route traffic appropriateley.
 
+Leave the `nginx-proxy` running through out the tutorial. You will make use of it in later steps.
+
 NOTE: Depending on the configuration of local firewalls, you may need to add a rule to allow all traffic from 10.0.75.1 and 10.0.75.2 for the duration of the tutorial. (Windows Only).
 
 Launch nginx-proxy using some placeholder certificates

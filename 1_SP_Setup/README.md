@@ -30,22 +30,30 @@ have already been adjusted. You can reference those if you get stuck.
 
 # Run a container
 
-We are going to run a container for the service `https://service.tutorial.stack-dev.cirrusidentity.com`
-and mount some configuration files.
+We are going to run a container for the service
+`https://service.tutorial.stack-dev.cirrusidentity.com` and mount some
+configuration files. You will need to be running the `nginx-proxy`
+from the prerequisite steps.
 
 ## macOs/Linux
 
 ```bash
 cd <git checkout>
 FOLDER=sp
-docker run -d --name service-provider \
-  -e VIRTUAL_PORT=443 \
-  -e VIRTUAL_PROTO=https \
-  -e VIRTUAL_HOST=service.tutorial.stack-dev.cirrusidentity.com \
-  -v $PWD/1_SP_Setup/$FOLDER/config:/var/simplesamlphp/config \
-  -v $PWD/1_SP_Setup/$FOLDER/metadata:/var/simplesamlphp/metadata \
-  -v $PWD/1_SP_Setup/cert:/var/simplesamlphp/cert \
-  cirrusid/ssp-base:1.14.16
+
+#Confirm you are in the correct place
+if [ -d $PWD/1_SP_Setup/$FOLDER/config ]; then
+  docker run -d --name service-provider \
+    -e VIRTUAL_PORT=443 \
+    -e VIRTUAL_PROTO=https \
+    -e VIRTUAL_HOST=service.tutorial.stack-dev.cirrusidentity.com \
+    -v $PWD/1_SP_Setup/$FOLDER/config:/var/simplesamlphp/config \
+    -v $PWD/1_SP_Setup/$FOLDER/metadata:/var/simplesamlphp/metadata \
+    -v $PWD/1_SP_Setup/cert:/var/simplesamlphp/cert \
+    cirrusid/ssp-base:1.14.16
+else
+  echo "File $PWD/1_SP_Setup/$FOLDER/config not found. Make sure you are in the tutorial git repo before running";
+fi
 ```
 
 ## Windows
@@ -71,6 +79,15 @@ https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/
 and see something like
 
 ![Install Image](./img/ssp_install_page.png)
+
+If you instead see
+
+```
+You have not yet created the SimpleSAMLphp configuration files.
+See: https://simplesamlphp.org/docs/devel/simplesamlphp-install-repo
+```
+
+then you ran Docker from the wrong directory and the volumes weren't mounted correctly
 
 # Configure It
 

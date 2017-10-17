@@ -105,6 +105,37 @@ the debugging section below.
 
 Here are some tips if you run into issues.
 
+## Test Shib doesn't have metadata
+
+Periodically TestShib will clear out old metadata, and it will need to be re-added.
+You can [download the SP metadata](https://service.tutorial.stack-dev.cirrusidentity.com/simplesaml/module.php/saml/sp/metadata.php/default-sp) and the [IdP metadata](https://idp.tutorial.stack-dev.cirrusidentity.com/simplesaml/saml2/idp/metadata.php), ensure the file-names are unique and end with `.xml` and [upload to TestShib](https://www.testshib.org/register.html). 
+
+TestShib use file name to identify your upload. If you pick a common name it may get overridden. If the file doesn't end in `.xml` then it seems TestShib won't recognize the file.
+
+
+## SimpleSAMLphp not configured.
+
+If you visit SSP in the browser and see
+
+```
+You have not yet created the SimpleSAMLphp configuration files.
+See: https://simplesamlphp.org/docs/devel/simplesamlphp-install-repo
+```
+
+then it means that SSP is unable to find your configuration
+files. This is usually caused by running the `docker run` command from
+the wrong folder. It should be run from the root level of the github
+checkout. If you look at the run command you will see it using
+arguments such as `-v $PWD/some/path:/var/simplesamlphp/somepath'. You
+need to be in the folder such that `$PWD/some/path` is a legetimate
+folder with the configuration files.
+
+Unforunately if you run docker from the wrong folder it will create
+those folders on your filesystem. However they will be empty, which is
+how you can determine if they came from the tutorial or were
+accidentaly created by docker.
+
+
 ## Enable `showerrors`
 
 In `config.php` we've disabled `showerrors` as a security best
